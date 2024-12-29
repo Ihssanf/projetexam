@@ -1,0 +1,29 @@
+/* ServiceSection.css */
+.services-container {
+    padding: 20px;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 5px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    background-color: white !important;
+}
+
+
+.service-card svg {
+    color: #a17025 !important; /* change this value to match your theme */
+}
+
+.service-card h6 {
+    color: #a17025;
+    font-weight: bold;
+
+}
+.service-card p {
+    color: #555;
+    text-align: center;
+}

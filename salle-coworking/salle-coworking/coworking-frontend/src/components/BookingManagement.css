@@ -1,0 +1,25 @@
+/* BookingManagement.css */
+.MuiTableContainer-root {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.MuiTableHead-root th {
+    font-weight: bold;
+    color: #333;
+    background-color: #f8f8f8;
+    padding: 16px;
+}
+
+.MuiTableBody-root tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light background for even rows */
+}
+
+.MuiTableBody-root td {
+    color: #555;
+    padding: 12px;
+}
+
+.MuiTableRow-root:hover {
+    background-color: #f0f0f0; /* Hover effect on rows */
+}

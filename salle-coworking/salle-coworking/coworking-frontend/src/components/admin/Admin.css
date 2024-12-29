@@ -1,0 +1,58 @@
+.admin-section {
+    background-color: #f5f5dc; /* Light beige background */
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    font-family: 'Arial', sans-serif;
+}
+
+.admin-card {
+    border-radius: 1rem !important;
+    padding: 2rem !important;
+}
+
+.admin-title {
+    font-weight: bold !important;
+    margin-bottom: 1rem !important;
+}
+
+.admin-title-line {
+    width: 60px;
+    margin: 0.5rem auto;
+    border-bottom: 2px solid #8B4513; /* Dark brown line */
+}
+
+.admin-subtitle {
+    color: #555 !important; /* Dark gray for the subtitle */
+}
+
+.admin-button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #A0522D !important; /* Dark brown for primary button */
+    border-color: #A0522D !important; /* Dark brown for border */
+    color: white !important;
+    text-decoration: none !important;
+    font-family: 'Arial', sans-serif !important;
+    border-radius: 2rem !important;
+    padding: 1rem 1.5rem !important;
+    font-size: 1.2rem !important;
+    transition: background-color 0.3s ease, color 0.3s ease !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.admin-button:hover {
+    background-color: #8B4513 !important; /* Slightly darker brown for hover */
+    color: #fff !important;
+}
+
+.admin-button:nth-child(2) {
+    background-color: #8B4513 !important; /* Darker brown for the booking button */
+    border-color: #8B4513 !important;
+}
+
+
+.admin-button:nth-child(2):hover {
+    background-color: #A0522D !important; /* Darker brown on hover */
+    color: #fff !important;
+}
