@@ -78,6 +78,59 @@ Le frontend est développé avec **React**, permettant une navigation fluide et 
 ## 🐳 **Docker Image**  
 Le projet peut être facilement conteneurisé avec **Docker** pour simplifier le déploiement.  
 
+
+
+version: '3'
+
+services:
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cocoworking
+    ports:
+      - "3306:3306"
+    volumes:
+    - ./cocoworking.sql:/docker-entrypoint-initdb.d/cocoworking.sql
+
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "9090:9090"
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/cocoworking
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    healthcheck:
+      test: "/usr/bin/mysql --user=root --password=root --execute \"SHOW DATABASES;\""
+      interval: 5s
+      timeout: 2s
+      retries: 100
+
+  frontend:
+    build:
+      context: ./coworking-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "8081:80"
+    volumes:
+    - ./path/to/custom/php.ini:/etc/php/7.4/apache2/php.ini
+
+
+
 ---
 
 ## 🚀 **Guide de démarrage :**  
